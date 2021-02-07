@@ -1,26 +1,49 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
 
+import {Rating, ValueType} from "./components/Rating/Rating";
+import {Title} from "./components/Title";
+import {UncontrolledOnOf} from "./components/UncontrolledOnOf/UncontrolledOnOf";
+
+import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRating";
+import {OnOf} from "./components/OnOf/OnOf";
+import {Accordion} from "./components/Accordion";
+
+
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    let [rateValue, setRateValue] = useState<ValueType>( 0)
+    let [collapsedAccordion, setCollapsedAccordion] = useState<boolean>(false)
+    let [on, setOn] = useState(false)
+
+
+    return (
+        <div className={"App"}>
+            {/*<UncontrolledOnOf onShang ={setOn}/> {on.toString()}*/}
+            {/*<OnOf on = {on} setOn = {setOn}/>*/}
+
+            {/*<Accordion*/}
+            {/*    title={"My Accordion1"}*/}
+            {/*    collapsed={collapsedAccordion}*/}
+            {/*    setCollapsedAccordion = {setCollapsedAccordion}*/}
+            {/*/>*/}
+            {/*<Rating value={0}/>*/}
+            {/*<Rating value={1}/>*/}
+            {/*<Rating value={2}/>*/}
+            {/*<Rating value={3}/>*/}
+            {/*<Rating value={rateValue} setRateValue = {setRateValue} />*/}
+            {/*<UncontrolledRating/>*/}
+            {/*<Rating value={5}/>*/}
+            {/*<UncontrolledOnOf/>*/}
+            {/*<UncontrolledOnOf/>*/}
+            {/*<UncontrolledOnOf/>*/}
+            {/*<Accordion title={"ControlledAccordion"} value={5} collapsed={false}/>*/}
+            {/*<UncontrolledAccordion title={'UncontrolledAccordion'} value={5}/>*/}
+
+            {/*<UncontrolledRating/>*/}
+            {/*<Rating value={2}/>*/}
+        </div>
+    );
 }
+
 
 export default App;
