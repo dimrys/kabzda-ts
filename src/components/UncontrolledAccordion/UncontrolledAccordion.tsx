@@ -1,4 +1,5 @@
-import React, {useState} from "react";
+import React, {useReducer} from "react";
+import {reducer, TOGGLE_COLLAPSED} from "./reducer";
 
 
 type UncontrolledAccordionTypeProps = {
@@ -7,20 +8,24 @@ type UncontrolledAccordionTypeProps = {
 }
 
 
-
-
-
 export function UncontrolledAccordion(props: UncontrolledAccordionTypeProps) {
-
-    let [collapsed, setCollapsed] = useState(false)
+    console.log("Неконтролируемы аккордион")
+    let [state, dispatch] = useReducer(reducer, {collapsed:false})
 
 
     return (
         <div>
+            {/*<UncontrolledAccordionTitle title={props.title}*/}
+            {/*                            onCollapsed={() => {*/}
+            {/*                                setCollapsed(!collapsed)*/}
+            {/*                            }}*/}
+            {/*/>*/}
             <UncontrolledAccordionTitle title={props.title}
-                                        onCollapsed = {() => {setCollapsed(!collapsed)}}
-                                         />
-            {!collapsed && <UncontrolledAccordionBody value={props.value}/>}
+                                        onCollapsed={() => {
+                                            dispatch({type: TOGGLE_COLLAPSED})
+                                        }}
+            />
+            {!state.collapsed && <UncontrolledAccordionBody value={props.value}/>}
         </div>
     );
 }
@@ -32,8 +37,11 @@ type UncontrolledAccordionTitleTypeProps = {
 }
 
 function UncontrolledAccordionTitle(props: UncontrolledAccordionTitleTypeProps) {
+    console.log("Тайтл")
     return (
-        <h3 onClick={() => {props.onCollapsed()}}>----{props.title}----</h3>
+        <h3 onClick={() => {
+            props.onCollapsed()
+        }}>----{props.title}----</h3>
     );
 
 }
@@ -43,6 +51,7 @@ type UncontrolledAccordionBodyTypeProps = {
 }
 
 function UncontrolledAccordionBody(props: UncontrolledAccordionBodyTypeProps) {
+    console.log("Боди")
     return (
         <ul>
             {props.value > 0 && <li>1</li>}
