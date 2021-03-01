@@ -8,6 +8,7 @@ import {UncontrolledOnOf} from "./components/UncontrolledOnOf/UncontrolledOnOf";
 import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRating";
 import {OnOf} from "./components/OnOf/OnOf";
 import {Accordion} from "./components/Accordion";
+import {Search} from "./components/Task/task";
 
 
 function App() {
@@ -20,7 +21,7 @@ function App() {
         <div className={"App"}>
             {/*<UncontrolledOnOf onShang ={setOn}/> {on.toString()}*/}
             {/*<OnOf on = {on} setOn = {setOn}/>*/}
-
+            <Search/>
             {/*<Accordion*/}
             {/*    title={"My Accordion1"}*/}
             {/*    collapsed={collapsedAccordion}*/}
