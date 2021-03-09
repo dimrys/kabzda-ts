@@ -9,6 +9,7 @@ import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRa
 import {OnOf} from "./components/OnOf/OnOf";
 import {Accordion} from "./components/Accordion";
 import {Search} from "./components/Task/task";
+import {LikeUseCallback} from "./components/LikeUseCallback/LikeUseCallback";
 
 
 function App() {
@@ -21,7 +22,8 @@ function App() {
         <div className={"App"}>
             {/*<UncontrolledOnOf onShang ={setOn}/> {on.toString()}*/}
             {/*<OnOf on = {on} setOn = {setOn}/>*/}
-            <Search/>
+            {/*<Search/>*/}
+            <LikeUseCallback/>
             {/*<Accordion*/}
             {/*    title={"My Accordion1"}*/}
             {/*    collapsed={collapsedAccordion}*/}
